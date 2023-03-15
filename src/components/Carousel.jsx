@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const Carousel = ({ images }) => {
+function Carousel({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -15,7 +15,6 @@ const Carousel = ({ images }) => {
       currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
     );
   };
-
   return (
     <div className="relative m-2 mt-2 rounded-lg border-2 border-blue-200 bg-white shadow-xl shadow-blue-500">
       <button
@@ -69,7 +68,9 @@ const Carousel = ({ images }) => {
       <div className="relative h-56 w-56 overflow-hidden rounded-lg sm:h-80 sm:w-80 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:w-[32rem]">
         <div>
           <Image
-            src={images[currentImageIndex]}
+            src={`/${images[currentImageIndex]}`}
+            height="1200"
+            width="800"
             alt={`Image ${currentImageIndex}`}
             className="absolute h-full w-full object-cover"
           />
@@ -77,6 +78,6 @@ const Carousel = ({ images }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Carousel;

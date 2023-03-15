@@ -1,12 +1,18 @@
-import React from "react";
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useContext } from "react";
+import { LanguageContext } from "@/utils/contexts/contextLanguage";
 
 function Contact() {
+  const { isSpanish } = useContext(LanguageContext);
+
   return (
     <section id="contact">
-      <div className="h-full w-full bg-gradient-to-b from-blue-900 via-[#04255A] to-[#0D47A1] text-center">
+      <div className="h-full w-full bg-gradient-to-b from-blue-900 via-[#04255A] to-[#0D47A1] text-center xl:h-screen">
         <div className="flex justify-center">
           <div className="mt-4 text-center">
-            <h2 className="text-white ">Contacta con nosotros</h2>
+            <h2 className="text-white ">
+              {isSpanish ? "Contacta con nosotros" : "Contact us"}
+            </h2>
           </div>
         </div>
         <div className="flex flex-wrap">
@@ -17,12 +23,14 @@ function Contact() {
                   htmlFor="name"
                   className="block text-lg font-medium text-white"
                 >
-                  Nombre
+                  {isSpanish ? "Nombre" : "Name"}
                 </label>
                 <input
                   type="text"
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder={
+                    isSpanish ? "Ingresa tu nombre" : "Enter your name"
+                  }
                   className="w-[260px] rounded border-2 border-solid border-gray-300 bg-gray-50 py-1.5 transition ease-in-out focus:border-purple-600 focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96"
                 />
               </div>
@@ -31,12 +39,14 @@ function Contact() {
                   htmlFor="subject"
                   className="block text-lg font-medium text-white"
                 >
-                  Asunto
+                  {isSpanish ? "Asunto" : "Subject"}
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  placeholder="Reserve a room"
+                  placeholder={
+                    isSpanish ? "Reservar habitación" : "Reserve a room"
+                  }
                   className="w-[260px] rounded border-2 border-solid border-gray-300 bg-gray-50 py-1.5 transition ease-in-out focus:border-purple-600 focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96"
                 />
               </div>
@@ -45,7 +55,7 @@ function Contact() {
                   htmlFor="email"
                   className="block text-lg font-medium text-white"
                 >
-                  Email
+                  {isSpanish ? "Correo electrónico" : "Email"}
                 </label>
                 <input
                   type="email"
@@ -59,21 +69,25 @@ function Contact() {
                   htmlFor="textarea"
                   className="block text-lg font-medium text-white"
                 >
-                  Mensaje
+                  {isSpanish ? "Mensaje" : "Message"}
                 </label>
                 <textarea
                   id="textarea"
                   rows="4"
-                  placeholder="Write your message here..."
+                  placeholder={
+                    isSpanish
+                      ? "Escribe tu mensaje aqui..."
+                      : "Write your message here..."
+                  }
                   className="w-[260px] border-2 border-solid border-gray-300 bg-gray-50 transition ease-in-out focus:border-purple-600 focus:bg-white focus:text-gray-700 focus:outline-none sm:w-96 md:w-96 lg:w-96"
-                ></textarea>
+                />
               </div>
               <div>
                 <button
                   type="button"
                   className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-purple-800/80 dark:focus:ring-purple-800"
                 >
-                  Enviar
+                  {isSpanish ? "Enviar" : "Send"}
                 </button>
               </div>
             </form>
@@ -93,7 +107,9 @@ function Contact() {
                     </svg>
                   </div>
                   <div className="mx-4">
-                    <p className=" text-base text-white">Phone Number</p>
+                    <p className=" text-base text-white">
+                      {isSpanish ? "Telefono" : "Phone Number"}
+                    </p>
                     <p className="text-gray-400">+0264123456</p>
                   </div>
                 </div>
@@ -111,8 +127,10 @@ function Contact() {
                     </svg>
                   </div>
                   <div className="mx-4">
-                    <p className="text-base text-white">Support e-mail</p>
-                    <p className="text-gray-400">email@gmail.com</p>
+                    <p className="text-base text-white">
+                      {isSpanish ? "Correo de soporte" : "Support e-mail"}
+                    </p>
+                    <p className="text-gray-400">hotel@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +147,9 @@ function Contact() {
                     </svg>
                   </div>
                   <div className="mx-4">
-                    <p className=" text-base text-white">Location</p>
+                    <p className=" text-base text-white">
+                      {isSpanish ? "Ubicación" : "Location"}
+                    </p>
                     <p className="text-gray-400">Av. 9 de Julio</p>
                   </div>
                 </div>
@@ -147,13 +167,15 @@ function Contact() {
                     </svg>
                   </div>
                   <div className="mx-4">
-                    <p className=" text-base text-white">Bug report</p>
+                    <p className=" text-base text-white">
+                      {isSpanish ? "Reporte de errores" : "Bug report"}
+                    </p>
                     <p className="text-gray-400">
                       <a
                         href="https://github.com/FacundoCastillo12/hotel-web/issues"
                         target="_blank"
                       >
-                        Report error
+                        Github
                       </a>
                     </p>
                   </div>
