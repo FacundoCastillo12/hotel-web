@@ -7,17 +7,23 @@
         "en": "Sea view"
       },
       "room_image": "assents/images/roomone.jpg",
+      "images": [
+        "assents/images/rooms/roomone/francescasaraco.jpg",
+        "assents/images/rooms/roomone/humphreymuleba.jpg",
+        "assents/images/rooms/roomone/roomone.jpg"
+      ],
       "description": {
         "es": "Esta habitación cuenta con una vista impresionante del océano. La habitación tiene una cama king size, televisión de pantalla plana, minibar, baño privado con ducha, aire acondicionado y balcón privado.",
         "en": "This room has a breathtaking view of the ocean. The room has a king size bed, flat screen TV, minibar, private bathroom with shower, air conditioning and private balcony."
       },
       "price_for_day": 250,
       "bed": "king size",
-      "jacuzzi": true,
+      "jacuzzi": false,
       "air_conditioning": true,
       "private_bathroom": true,
       "television": true,
-      "living_room": true
+      "living_room": false,
+      "mini_bar": true
     },
     {
       "id": 2,
@@ -26,17 +32,23 @@
         "en": "Beach Bungalow"
       },
       "room_image": "assents/images/roomtwo.jpg",
+      "images": [
+        "assents/images/rooms/roomtwo/sashakaunasone.jpg",
+        "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
+        "assents/images/rooms/roomtwo/sashakaunasthree.jpg"
+      ],
       "description": {
-        "es": "Esta habitación es una cabaña de madera que se encuentra directamente en la playa. La habitación cuenta con una cama king size, aire acondicionado, minibar, baño privado con ducha, terraza privada con hamaca y sillas para relajarse mientras escucha las olas del mar",
+        "es": "Esta habitación es una cabaña de madera que se encuentra directamente en la playa. La habitación cuenta con una cama king size, aire acondicionado, minibar, baño privado con ducha, terraza privada con hamaca y sillas para relajarse mientras escucha las olas del mar.",
         "en": "This room is a wooden cabin located directly on the beach. The room has a king size bed, air conditioning, minibar, private bathroom with shower, private terrace with hammock and chairs to relax while listening to the ocean waves."
       },
       "price_for_day": 350,
       "bed": "king size",
-      "jacuzzi": true,
+      "jacuzzi": false,
       "air_conditioning": true,
       "private_bathroom": true,
-      "television": true,
-      "living_room": true
+      "television": false,
+      "living_room": false,
+      "mini_bar": true
     },
     {
       "id": 3,
@@ -45,6 +57,11 @@
         "en": "Luxury Suite with Private Jacuzzi"
       },
       "room_image": "assents/images/roomthree.jpg",
+      "images": [
+        "assents/images/rooms/roomthree/stevenungermannone.jpg",
+        "assents/images/rooms/roomthree/stevenungermanntwo.jpg",
+        "assents/images/rooms/roomthree/stevenungermannthree.jpg"
+      ],
       "description": {
         "es": "Esta habitación es la más lujosa del hotel y cuenta con un jacuzzi privado en la terraza con hamacas y sillas para relajarse. La habitación tiene una cama king size, aire acondicionado, minibar, baño privado con ducha y una sala de estar con sofá y televisión de pantalla plana.",
         "en": "This room is the most luxurious room in the hotel and features a private Jacuzzi on the terrace with hammocks and chairs for relaxing. The room has a king size bed, air conditioning, minibar, private bathroom with shower and a living room with sofa and flat screen TV."
@@ -55,7 +72,8 @@
       "air_conditioning": true,
       "private_bathroom": true,
       "television": true,
-      "living_room": true
+      "living_room": true,
+      "mini_bar": true
     }
   ]
 }
