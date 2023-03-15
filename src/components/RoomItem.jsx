@@ -5,7 +5,6 @@ import { LanguageContext } from "@/utils/contexts/contextLanguage";
 
 function Room({ room }) {
   const {
-    id,
     title,
     room_image: roomImg,
     description,
@@ -26,18 +25,17 @@ function Room({ room }) {
         />
       </div>
 
-      <div>
+      <div className="h-48">
         <h5 className="mb-3 text-lg font-bold capitalize">
           {isSpanish ? `${title.es}` : `${title.en}`}
         </h5>
-        <p>{isSpanish ? `${description.es}` : `${description.en}`}</p>
+        <p className=" mx-2 text-justify">
+          {isSpanish ? `${description.es}` : `${description.en}`}
+        </p>
       </div>
 
       <Link
-        href={{
-          pathname: `/rooms/${id}`,
-          query: { id: `${id}` },
-        }}
+        href="/roomslist"
         className="mt-1 mb-1 inline-block rounded-full bg-purple-600 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-6 py-2.5 text-center text-sm font-medium uppercase leading-tight  text-white shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-purple-800/80 dark:focus:ring-purple-800"
       >
         {isSpanish ? "Más información" : "Read more"}
@@ -56,4 +54,3 @@ function Room({ room }) {
 }
 
 export default Room;
-// relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg

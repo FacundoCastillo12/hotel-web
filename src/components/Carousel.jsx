@@ -22,7 +22,7 @@ function Carousel({ images }) {
         className="group absolute top-0 left-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
         onClick={handlePrevClick}
       >
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
+        <span className=" inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -46,7 +46,7 @@ function Carousel({ images }) {
         className="group absolute top-0 right-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
         onClick={handleNextClick}
       >
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -65,14 +65,14 @@ function Carousel({ images }) {
         </span>
       </button>
 
-      <div className="relative h-56 w-56 overflow-hidden rounded-lg sm:h-80 sm:w-80 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:w-[32rem]">
+      <div className="h-56 w-56 overflow-hidden rounded-lg sm:h-80 sm:w-80 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:w-[32rem]">
         <div>
           <Image
             src={`/${images[currentImageIndex]}`}
             height="1200"
             width="800"
             alt={`Image ${currentImageIndex}`}
-            className="absolute h-full w-full object-cover"
+            className="absolute h-full w-full rounded object-cover"
           />
         </div>
       </div>

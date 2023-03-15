@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="border-blue-gray-600 border-t-2 bg-[#0D47A1] bg-gradient-to-t pt-6 pb-6 text-center">
+    <footer className=" border-t-2 border-gray-600 bg-[#042459] bg-gradient-to-t pt-6 pb-6 text-center">
       <div className="pt-9">
         <div className="mb-9 flex flex-wrap justify-center">
           <a href="#!" className="mx-6 text-white hover:scale-150">
@@ -67,7 +67,7 @@ function Footer() {
         <div className=" p-4 text-center text-gray-500 hover:text-white">
           © 2023 Copyright:{" "}
           <a href="https://github.com/FacundoCastillo12" target="_blank">
-            Facundo Castillo
+            Miracle Hotel
           </a>
         </div>
       </div>

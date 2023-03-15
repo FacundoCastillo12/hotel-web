@@ -203,10 +203,10 @@ function Navbarmenu() {
                   )}
                 </button>
                 {openLanguageMenu && (
-                  <div className="absolute right-0 left-0 top-4 z-10 mt-2 flex w-48 flex-wrap rounded-md bg-[#01071D] shadow-lg lg:top-6">
+                  <div className="absolute right-0 left-0 top-4 z-10 mt-1 flex w-48 flex-col justify-center rounded-b-md bg-[#01071D] shadow-lg lg:top-6">
                     <button
                       type="button"
-                      className="my-1 block w-full hover:border-b"
+                      className="my-1 inline-block hover:border-b"
                       onClick={setSpanishLanguage}
                     >
                       Español
@@ -214,7 +214,7 @@ function Navbarmenu() {
 
                     <button
                       type="button"
-                      className="my-1 block w-full hover:border-b"
+                      className="my-1 inline-block hover:border-b"
                       onClick={setEnglishLanguage}
                     >
                       English

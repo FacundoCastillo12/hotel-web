@@ -6,8 +6,8 @@ import { LanguageContext } from "@/utils/contexts/contextLanguage";
 function About() {
   const { isSpanish } = useContext(LanguageContext);
   return (
-    <section id="about" className=" border-blue-gray-600 border-y">
-      <div className="flex w-full items-center justify-center bg-gradient-to-t from-[#0D47A1] to-[#0A3E8F] py-6 lg:h-screen">
+    <section id="about" className=" border-y border-gray-600">
+      <div className="flex w-full items-center justify-center bg-gradient-to-t from-[#031D73] to-[#031961] py-6 lg:h-screen">
         <div className="m-auto grid max-w-[1240px] grid-cols-2 gap-8 md:w-full lg:grid-cols-3">
           <div className="col-span-2 ml-2 md:col-span-1 lg:col-span-2">
             <h2 className="mb-4 mt-10 text-center text-2xl font-bold uppercase italic text-white">

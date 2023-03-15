@@ -7,7 +7,7 @@ function Main() {
   const { isSpanish } = useContext(LanguageContext);
   return (
     <section id="home">
-      <div className=" h-screen w-full bg-[#042459] bg-cover bg-center bg-no-repeat text-center">
+      <div className=" h-screen w-full bg-[#031A44] bg-cover bg-center bg-no-repeat text-center">
         <div className="relative h-full">
           <Image
             className="absolute h-full w-full object-cover"
@@ -17,7 +17,7 @@ function Main() {
           />
           <div className="absolute inset-0 bg-gray-900 bg-opacity-40" />
           <div className=" absolute inset-0 mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
-            <div className="">
+            <div>
               <h2 className="mb-4 font-mono text-4xl font-bold italic text-white ">
                 {isSpanish
                   ? "Bienvenidos a Hotel Miracle"

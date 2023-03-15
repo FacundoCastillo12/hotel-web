@@ -6,8 +6,8 @@ function Contact() {
   const { isSpanish } = useContext(LanguageContext);
 
   return (
-    <section id="contact">
-      <div className="h-full w-full bg-gradient-to-b from-blue-900 via-[#04255A] to-[#0D47A1] text-center xl:h-screen">
+    <section id="contact" className="h-[100%]">
+      <div className="h-full w-full bg-gradient-to-t from-[#042180] to-[#031D73] text-center">
         <div className="flex justify-center">
           <div className="mt-4 text-center">
             <h2 className="text-white ">
