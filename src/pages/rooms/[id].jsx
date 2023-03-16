@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -33,7 +32,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const room = rooms.find((room) => room.id === id);
   const room = rooms.find((roomSelect) => roomSelect.id === id);
   return {
     props: {
