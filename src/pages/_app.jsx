@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import "@/styles/globals.css";
 import React from "react";
 import Navbar from "@/components/Navbar";

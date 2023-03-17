@@ -12,8 +12,6 @@ function Services() {
     "services"
   );
   const { isSpanish } = useContext(LanguageContext);
-  // Aqui tomar el if de data y adentro usar un usestate crear un slice de la data.services
-  // Luego guardarlo en el usestate y usar esos elementos para que cargue todo. Por mientras poner loading
 
   return (
     <section id="services">
@@ -51,7 +49,7 @@ function Services() {
           <div className="order-last my-5 w-full hover:scale-110 lg:my-20">
             <Link
               href="/serviceslist"
-              className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-purple-800/80 dark:focus:ring-purple-800"
+              className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:bg-gradient-to-br"
             >
               {isSpanish
                 ? "Conocé mas sobre nuestros servicios"

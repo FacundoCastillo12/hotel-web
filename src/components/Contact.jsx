@@ -1,13 +1,71 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useForm } from "@formspree/react";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
+import Loading from "./Loading";
 
+function useValidForm() {
+  const [nameIsValid, setNameIsValid] = useState(true);
+  const [subjectIsValid, setSubjectIsValid] = useState(true);
+  const [emailIsValid, setEmailIsValid] = useState(true);
+  const [messageIsValid, setMessageIsValid] = useState(true);
+
+  const handleInputNameChange = (e) => {
+    setNameIsValid(e.target.validity.valid);
+  };
+
+  const handleInputSubjectChange = (e) => {
+    setSubjectIsValid(e.target.validity.valid);
+  };
+  const handleInputEmailChange = (e) => {
+    setEmailIsValid(e.target.validity.valid);
+  };
+
+  const validateMessage = (messageValue) => {
+    if (messageValue.length > 200) {
+      return false;
+    }
+
+    const regex = /^[a-zA-Z0-9,.!?'"()\s]+$/;
+    if (!regex.test(messageValue)) {
+      return false;
+    }
+    return true;
+  };
+
+  const handleInputMessageChange = (e) => {
+    const messageValue = e.target.value;
+    setMessageIsValid(validateMessage(messageValue));
+  };
+
+  return {
+    nameIsValid,
+    subjectIsValid,
+    emailIsValid,
+    messageIsValid,
+    handleInputNameChange,
+    handleInputSubjectChange,
+    handleInputEmailChange,
+    handleInputMessageChange,
+  };
+}
 function Contact() {
   const { isSpanish } = useContext(LanguageContext);
+  const {
+    nameIsValid,
+    subjectIsValid,
+    emailIsValid,
+    messageIsValid,
+    handleInputNameChange,
+    handleInputSubjectChange,
+    handleInputEmailChange,
+    handleInputMessageChange,
+  } = useValidForm();
+  const [state, handleSubmitForm] = useForm("xvonqeqp");
 
   return (
     <section id="contact" className="h-[100%]">
-      <div className="h-full w-full bg-gradient-to-t from-[#042180] to-[#031D73] text-center">
+      <div className=" h-auto w-full bg-gradient-to-t from-[#042180] to-[#031D73] text-center">
         <div className="flex justify-center">
           <div className="mt-4 text-center">
             <h2 className="text-white ">
@@ -17,8 +75,8 @@ function Contact() {
         </div>
         <div className="flex flex-wrap">
           <div className="mb-12 w-full basis-auto px-3 lg:mb-0 lg:w-2/5 lg:px-6">
-            <form>
-              <div className="">
+            <form onSubmit={handleSubmitForm}>
+              <div className="w-auto">
                 <label
                   htmlFor="name"
                   className="block text-lg font-medium text-white"
@@ -28,12 +86,27 @@ function Contact() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   placeholder={
                     isSpanish ? "Ingresa tu nombre" : "Enter your name"
                   }
-                  className="w-[260px] rounded border-2 border-solid border-gray-300 bg-gray-50 py-1.5 transition ease-in-out focus:border-purple-600 focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96"
+                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    nameIsValid ? "border-green-500" : "border-red-500"
+                  }`}
+                  pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20}(?:\s[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20})?$"
+                  onChange={handleInputNameChange}
+                  required
                 />
               </div>
+              {nameIsValid ? (
+                ""
+              ) : (
+                <span className=" text-red-600 hover:text-red-100">
+                  {isSpanish
+                    ? "Reglas: Dos palabras con 20 caracteres máximos sin números o caracteres extraños."
+                    : "Rules: Two words with 20 characters maximum with no numbers or extraneous characters."}
+                </span>
+              )}
               <div>
                 <label
                   htmlFor="subject"
@@ -44,12 +117,27 @@ function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   placeholder={
                     isSpanish ? "Reservar habitación" : "Reserve a room"
                   }
-                  className="w-[260px] rounded border-2 border-solid border-gray-300 bg-gray-50 py-1.5 transition ease-in-out focus:border-purple-600 focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96"
+                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    subjectIsValid ? "border-green-500" : "border-red-500"
+                  }`}
+                  pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20}(?:\s[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{1,20}){0,2}$"
+                  onChange={handleInputSubjectChange}
+                  required
                 />
               </div>
+              {subjectIsValid ? (
+                ""
+              ) : (
+                <span className=" text-red-600 hover:text-red-200">
+                  {isSpanish
+                    ? "Reglas: Tres palabras con veinte caracteres máximo, sin números o caracteres extraños."
+                    : "Rules: Three words with twenty characters maximum, no numbers or extraneous characters."}
+                </span>
+              )}
               <div>
                 <label
                   htmlFor="email"
@@ -60,10 +148,25 @@ function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="email@gmail.com"
-                  className="w-[260px] rounded border-2 border-solid border-gray-300 bg-gray-50 py-1.5 transition ease-in-out focus:border-purple-600 focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96"
+                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    emailIsValid ? "border-green-500" : "border-red-500"
+                  }`}
+                  onChange={handleInputEmailChange}
+                  required
                 />
               </div>
+              {emailIsValid ? (
+                ""
+              ) : (
+                <span className=" text-red-600 hover:text-red-200">
+                  {isSpanish
+                    ? "Reglas: Ingresar un mail válido."
+                    : "Rules: Enter a valid email address."}
+                </span>
+              )}
               <div>
                 <label
                   htmlFor="textarea"
@@ -73,24 +176,71 @@ function Contact() {
                 </label>
                 <textarea
                   id="textarea"
+                  name="message"
                   rows="4"
                   placeholder={
                     isSpanish
                       ? "Escribe tu mensaje aqui..."
                       : "Write your message here..."
                   }
-                  className="w-[260px] border-2 border-solid border-gray-300 bg-gray-50 transition ease-in-out focus:border-purple-600 focus:bg-white focus:text-gray-700 focus:outline-none sm:w-96 md:w-96 lg:w-96"
+                  className={`w-[260px] max-w-full border-2 border-solid border-gray-300 bg-gray-50 transition ease-in-out focus:bg-white focus:text-gray-700 focus:outline-none sm:w-96 md:w-96 lg:w-96 ${
+                    messageIsValid ? "border-green-500" : "border-red-500"
+                  }`}
+                  onChange={handleInputMessageChange}
+                  required
                 />
               </div>
+              {messageIsValid ? (
+                ""
+              ) : (
+                <span className=" text-red-600 hover:text-red-200">
+                  {isSpanish
+                    ? "Reglas: No se permite caracteres extraños y 200 caracteres máximo."
+                    : "Rules: No strange characters and 200 characters maximum allowed."}
+                </span>
+              )}
               <div>
                 <button
-                  type="button"
-                  className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-purple-800/80 dark:focus:ring-purple-800"
+                  type="submit"
+                  className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br"
+                  disabled={state.succeeded}
                 >
                   {isSpanish ? "Enviar" : "Send"}
                 </button>
               </div>
             </form>
+            <div className="mb-10">
+              {state.submitting && (
+                <div>
+                  <p className="rounded bg-yellow-500 px-4 py-2 text-black">
+                    {isSpanish
+                      ? "El formulario se está enviando. Por favor espera..."
+                      : "The form is being submitted. Please wait..."}
+                  </p>
+                  <Loading />
+                </div>
+              )}
+
+              {state.succeeded && (
+                <div>
+                  <p className="rounded bg-green-500 px-4 py-2 text-black">
+                    {isSpanish
+                      ? "El formulario ha sido enviado con éxito!"
+                      : "The form has been successfully submitted!"}
+                  </p>
+                </div>
+              )}
+
+              {state.errors.length > 0 ? (
+                <div>
+                  <p className="rounded bg-red-500 px-4 py-2 text-black">
+                    {isSpanish
+                      ? "Ha ocurrido un error al enviar el formulario. Por favor intenta de nuevo más tarde."
+                      : "An error occurred while submitting the form. Please try again later."}
+                  </p>
+                </div>
+              ) : null}
+            </div>
           </div>
           <div className="mb-12 w-full lg:w-[60%] lg:px-6">
             <div className="mt-4 flex flex-wrap items-center justify-center">

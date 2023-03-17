@@ -1,7 +1,6 @@
-/* eslint-disable import/extensions */
 import React, { useContext } from "react";
-
 import Image from "next/image";
+import Link from "next/link";
 import { useFetchGetData } from "@/hooks/useSimpleFecthHook";
 import hotelApi from "@/utils/api";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
@@ -29,8 +28,8 @@ function RoomsList() {
             />
             <div className="absolute inset-0 bg-gray-900 bg-opacity-80" />
             <div className="absolute inset-0 mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
-              <div className="">
-                <h2 className="mb-4 font-mono text-4xl font-bold italic text-white ">
+              <div className="mt-10">
+                <h2 className="mt-10 font-mono text-4xl font-bold italic text-white ">
                   {isSpanish ? "Nuestras habitaciones" : "Our rooms"}
                 </h2>
                 <p className=" text-xl text-white">
@@ -43,7 +42,7 @@ function RoomsList() {
           </div>
         </div>
       </section>
-      <section className="border-blue-gray-600 h-[100%] w-full ">
+      <section className="border-blue-gray-600 h-[100%] w-full">
         <div className="bg-[#02134D] bg-gradient-to-t text-center">
           <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center justify-center p-2">
             {loading && <Loading />}
@@ -53,11 +52,11 @@ function RoomsList() {
               </div>
             )}
             {data && (
-              <div className="mx-auto mt-2 grid max-w-[1240px] gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mx-2 mt-2 grid max-w-[1240px] gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {data.rooms.map((room) => (
                   <div
                     key={room.id}
-                    className="mx-2 border border-purple-500 text-white hover:scale-105 hover:bg-blue-800/80"
+                    className="mx-2 my-4 border border-purple-500 bg-[#01032B] text-white hover:scale-105 hover:bg-blue-600"
                   >
                     <div className="my-2 h-8 border-b border-purple-500">
                       <h3 className="text-xl capitalize">
@@ -69,7 +68,7 @@ function RoomsList() {
                         <Carousel images={room.images} />
                       </div>
                     </div>
-                    <div className="h-36 border-b border-purple-500">
+                    <div className="h-52 border-b border-purple-500 sm:h-32 md:h-40 lg:h-48">
                       <p className="mx-2 my-4 text-justify">
                         {isSpanish ? room.description.es : room.description.en}
                       </p>
@@ -140,6 +139,14 @@ function RoomsList() {
                             "No"}
                         </strong>
                       </div>
+                    </div>
+                    <div className="my-2 h-10">
+                      <Link
+                        href="/#contact"
+                        className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br"
+                      >
+                        {isSpanish ? "Reservar" : "Reserve"}
+                      </Link>
                     </div>
                   </div>
                 ))}

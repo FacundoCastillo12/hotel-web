@@ -15,14 +15,15 @@ function Carousel({ images }) {
       currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
     );
   };
+
   return (
-    <div className="relative m-2 mt-2 rounded-lg border-2 border-blue-200 bg-white shadow-xl shadow-blue-500">
+    <div className="relative m-2 mt-2 rounded-lg border-2 border-blue-200 bg-white shadow-xl shadow-blue-500 ">
       <button
         type="button"
         className="group absolute top-0 left-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
         onClick={handlePrevClick}
       >
-        <span className=" inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
+        <span className=" inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,13 +41,12 @@ function Carousel({ images }) {
           <span className="sr-only">Anterior</span>
         </span>
       </button>
-
       <button
         type="button"
         className="group absolute top-0 right-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
         onClick={handleNextClick}
       >
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -53,6 +53,7 @@ function Navbarmenu() {
               }`}
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
+              title="Menu button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +79,7 @@ function Navbarmenu() {
                 : " hidden "
             }`}
           >
-            <ul className="flex list-none flex-col text-white lg:ml-auto lg:flex-row">
+            <div className="flex list-none flex-col text-white lg:ml-auto lg:flex-row">
               {isHomePage ? (
                 <>
                   <SrollLink
@@ -88,9 +89,9 @@ function Navbarmenu() {
                     exact="true"
                     offset={-80}
                   >
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Inicio" : "Home"}
-                    </li>
+                    </p>
                   </SrollLink>
                   <SrollLink
                     to="rooms"
@@ -99,9 +100,9 @@ function Navbarmenu() {
                     exact="true"
                     offset={-80}
                   >
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Habitaciones" : "Rooms"}
-                    </li>
+                    </p>
                   </SrollLink>
                   <SrollLink
                     to="services"
@@ -110,9 +111,9 @@ function Navbarmenu() {
                     exact="true"
                     offset={-80}
                   >
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Servicios" : "Services"}
-                    </li>
+                    </p>
                   </SrollLink>
                   <SrollLink
                     to="about"
@@ -121,9 +122,9 @@ function Navbarmenu() {
                     exact="true"
                     offset={-80}
                   >
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Acerca de Nosotros" : "About Us"}
-                    </li>
+                    </p>
                   </SrollLink>
                   <SrollLink
                     to="contact"
@@ -132,37 +133,37 @@ function Navbarmenu() {
                     exact="true"
                     offset={-80}
                   >
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Contacto" : "Contact"}
-                    </li>
+                    </p>
                   </SrollLink>
                 </>
               ) : (
                 <>
                   <Link href="/#home">
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Inicio" : "Home"}
-                    </li>
+                    </p>
                   </Link>
                   <Link href="/#rooms">
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Habitaciones" : "Rooms"}
-                    </li>
+                    </p>
                   </Link>
                   <Link href="/#services">
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Servicios" : "Services"}
-                    </li>
+                    </p>
                   </Link>
                   <Link href="/#about">
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Acerca de Nosotros" : "About Us"}
-                    </li>
+                    </p>
                   </Link>
                   <Link href="/#contact">
-                    <li className="ml-10 text-base hover:border-b">
+                    <p className="ml-10 cursor-pointer text-base hover:border-b">
                       {isSpanish ? "Contacto" : "Contact"}
-                    </li>
+                    </p>
                   </Link>
                 </>
               )}
@@ -222,7 +223,7 @@ function Navbarmenu() {
                   </div>
                 )}
               </div>
-            </ul>
+            </div>
           </div>
         </div>
       </nav>

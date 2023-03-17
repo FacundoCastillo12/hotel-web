@@ -20,7 +20,7 @@ function Main() {
             <div>
               <h2 className="mb-4 font-mono text-4xl font-bold italic text-white ">
                 {isSpanish
-                  ? "Bienvenidos a Hotel Miracle"
+                  ? "Bienvenidos al Hotel Miracle"
                   : "Welcome to Miracle Hotel"}
               </h2>
               <p className=" text-xl text-white">

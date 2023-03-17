@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import Image from "next/image";
 import { useFetchGetData } from "@/hooks/useSimpleFecthHook";
 import hotelApi from "@/utils/api";
@@ -28,7 +27,7 @@ function RoomsList() {
             />
             <div className="absolute inset-0 bg-gray-900 bg-opacity-80" />
             <div className="absolute inset-0 mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
-              <div className="">
+              <div className="mt-16">
                 <h2 className="mb-4 font-mono text-4xl font-bold italic text-white ">
                   {isSpanish ? "Nuestros servicios" : "Our services"}
                 </h2>
