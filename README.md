@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
 
-## Getting Started
+This hotel website was created with the aim of applying and improving my web development skills and providing an exceptional user experience. The platform presents detailed information about the hotel's rooms and services, and provides contact forms for users to easily communicate with the administrators.
 
-First, run the development server:
+To develop this website, technologies such as React and NextJS were used, and the Tailwind style library was applied to ensure maximum adaptability and responsiveness on different devices and screens. This project has been a great opportunity to learn and apply knowledge in web application development. Explore the website and make yourself at home!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Functional form with validations: The form includes validations to ensure that the fields are completed correctly before sending information to formspree.io. This ensures that the information received by the hotel is accurate and useful for the user.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Language selection: A language selection button has been added to allow visitors to change the language of the page to Spanish or English. This improves the user experience, as they can access content in their preferred language quickly and easily.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Responsive design: The website is fully responsive thanks to the use of the Tailwind styling library. This allows the page to adapt to different screen sizes, ensuring that users have an optimal viewing experience regardless of the device they are using.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Use of modern technologies: The website has been developed using modern technologies such as React and NextJS. This ensures optimal performance and a smooth, attractive user experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Complete information about the rooms: The page displays complete information about each of the hotel's rooms, including detailed descriptions, photographs, and prices. This information is presented clearly and in an easy-to-read format, allowing the user to compare different options and choose the one that best suits their needs.
 
-## Learn More
+6. Complete information about the services: The page features a dedicated section for displaying the hotel's services. This allows the user to better understand what the hotel has to offer and make an informed decision about their reservation.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To install and run this project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. You can download or clone this repository to your local machine.
 
-## Deploy on Vercel
+2. Install the necessary dependencies by running this command in the project's root directory: `npm install`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. To start the development server and view the website locally, run this command: `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The website will be available at http://localhost:3000 in your web browser.
+
+That's it! You should now be able to see and interact with the website on your own machine.

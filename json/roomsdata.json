@@ -6,7 +6,7 @@
         "es": "Vista al mar",
         "en": "Sea view"
       },
-      "room_image": "assents/images/roomone.jpg",
+      "room_image": "assents/images/rooms/roomone/roomone.jpg",
       "images": [
         "assents/images/rooms/roomone/francescasaraco.jpg",
         "assents/images/rooms/roomone/humphreymuleba.jpg",
@@ -31,15 +31,15 @@
         "es": "Bungalow en la playa",
         "en": "Beach Bungalow"
       },
-      "room_image": "assents/images/roomtwo.jpg",
+      "room_image": "assents/images/rooms/roomtwo/roomtwo.jpg",
       "images": [
         "assents/images/rooms/roomtwo/sashakaunasone.jpg",
         "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
         "assents/images/rooms/roomtwo/sashakaunasthree.jpg"
       ],
       "description": {
-        "es": "Esta habitación es una cabaña de madera que se encuentra directamente en la playa. La habitación cuenta con una cama king size, aire acondicionado, minibar, baño privado con ducha, terraza privada con hamaca y sillas para relajarse mientras escucha las olas del mar.",
-        "en": "This room is a wooden cabin located directly on the beach. The room has a king size bed, air conditioning, minibar, private bathroom with shower, private terrace with hammock and chairs to relax while listening to the ocean waves."
+        "es": "Esta habitación es una cabaña de madera que se encuentra directamente en la playa. La habitación cuenta con una cama king size, aire acondicionado, minibar, baño privado con ducha, y sillas para relajarse mientras escucha las olas del mar.",
+        "en": "This room is a wooden cabin located directly on the beach. The room has a king size bed, air conditioning, minibar, private bathroom with shower, private terrace and chairs to relax while listening to the ocean waves."
       },
       "price_for_day": 350,
       "bed": "king size",
@@ -53,18 +53,18 @@
     {
       "id": 3,
       "title": {
-        "es": "Suite de lujo con jacuzzi privado",
-        "en": "Luxury Suite with Private Jacuzzi"
+        "es": "Suite de lujo",
+        "en": "Luxury Suite"
       },
-      "room_image": "assents/images/roomthree.jpg",
+      "room_image": "assents/images/rooms/roomthree/roomthree.jpg",
       "images": [
         "assents/images/rooms/roomthree/stevenungermannone.jpg",
         "assents/images/rooms/roomthree/stevenungermanntwo.jpg",
         "assents/images/rooms/roomthree/stevenungermannthree.jpg"
       ],
       "description": {
-        "es": "Esta habitación es la más lujosa del hotel y cuenta con un jacuzzi privado en la terraza con hamacas y sillas para relajarse. La habitación tiene una cama king size, aire acondicionado, minibar, baño privado con ducha y una sala de estar con sofá y televisión de pantalla plana.",
-        "en": "This room is the most luxurious room in the hotel and features a private Jacuzzi on the terrace with hammocks and chairs for relaxing. The room has a king size bed, air conditioning, minibar, private bathroom with shower and a living room with sofa and flat screen TV."
+        "es": "La habitación de lujo incluye jacuzzi privado en la terraza, cama king size, aire acondicionado, minibar, baño con ducha y sala de estar con TV de pantalla plana. Además, cuenta con hamacas y sillas para relajarse en la terraza.",
+        "en": "The deluxe room includes a private Jacuzzi on the terrace, king size bed, air conditioning, minibar, bathroom with shower and living room with flat screen TV. It also has hammocks and chairs for relaxing on the terrace."
       },
       "price_for_day": 500,
       "bed": "king size",
@@ -73,6 +73,81 @@
       "private_bathroom": true,
       "television": true,
       "living_room": true,
+      "mini_bar": true
+    },
+    {
+      "id": 4,
+      "title": {
+        "es": "Habitación Jardín",
+        "en": "Garden Room"
+      },
+      "room_image": "assents/images/rooms/roomfour/visualsofdanaroombase.jpg",
+      "images": [
+        "assents/images/rooms/roomfour/visualsofdanaroomone.jpg",
+        "assents/images/rooms/roomfour/visualsofdanaroomtwo.jpg",
+        "assents/images/rooms/roomfour/visualsofdanaroomthree.jpg"
+      ],
+      "description": {
+        "es": "Disfruta de la tranquilidad de nuestra Habitación Jardín. Descansa en una cama king-size rodeado de vegetación y flores tropicales. Refréscate con el aire acondicionado y relájate viendo tu programa favorito en la televisión.",
+        "en": "Enjoy the tranquility of our Garden Room. Relax in a king-size bed surrounded by lush vegetation and tropical flowers. Cool off with the air conditioning and unwind watching your favorite show on TV."
+      },
+      "price_for_day": 150,
+      "bed": "king size",
+      "jacuzzi": false,
+      "air_conditioning": true,
+      "private_bathroom": true,
+      "television": true,
+      "living_room": false,
+      "mini_bar": false
+    },
+    {
+      "id": 5,
+      "title": {
+        "es": "Frente al Mar",
+        "en": "Oceanfront Room"
+      },
+      "room_image": "assents/images/rooms/roomfive/chastitycortijoone.jpg",
+      "images": [
+        "assents/images/rooms/roomfive/chastitycortijoone.jpg",
+        "assents/images/rooms/roomfive/rarchitecturetwo.jpg",
+        "assents/images/rooms/roomfive/vitalysacredthree.jpg"
+      ],
+      "description": {
+        "es": "Disfruta de la vista panorámica del océano en una habitación de lujo frente al mar. Descansa en una cama king size rodeado de comodidades como aire acondicionado y jacuzzi. Relájate en la sala de estar privada o en la terraza privada.",
+        "en": "Enjoy panoramic ocean views from a luxury oceanfront room. Relax on a king-size bed surrounded by amenities like air conditioning and a Jacuzzi. Unwind in your private living room or on your own private terrace."
+      },
+      "price_for_day": 450,
+      "bed": "king size",
+      "jacuzzi": true,
+      "air_conditioning": true,
+      "private_bathroom": true,
+      "television": true,
+      "living_room": true,
+      "mini_bar": true
+    },
+    {
+      "id": 6,
+      "title": {
+        "es": "Habitación Costa del Sol",
+        "en": "Costa del Sol Room"
+      },
+      "room_image": "assents/images/rooms/roomsix/huynguyenone.jpg",
+      "images": [
+        "assents/images/rooms/roomsix/huynguyenone.jpg",
+        "assents/images/rooms/roomsix/aaronhubertwo.jpg",
+        "assents/images/rooms/roomsix/drewcoffmanthree.jpg"
+      ],
+      "description": {
+        "es": "Esta habitación con vista al mar está diseñada para aquellos que buscan relajarse y disfrutar de la tranquilidad de la playa. Decorada con tonos cálidos y acentos de madera, cuenta con todo lo necesario para una estadía cómoda y acogedora.",
+        "en": "This sea view room is designed for those who seek to relax and enjoy the tranquility of the beach. Decorated with warm tones and wooden accents, it has everything needed for a comfortable and cozy stay."
+      },
+      "price_for_day": 300,
+      "bed": "king size",
+      "jacuzzi": false,
+      "air_conditioning": true,
+      "private_bathroom": true,
+      "television": true,
+      "living_room": false,
       "mini_bar": true
     }
   ]
