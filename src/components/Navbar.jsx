@@ -41,7 +41,7 @@ function Navbarmenu() {
             ) : (
               <Link href="/">
                 <p className="cursor-pointer text-3xl font-bold text-white">
-                  Hotel Miracle
+                  Miracle Hotel
                 </p>
               </Link>
             )}

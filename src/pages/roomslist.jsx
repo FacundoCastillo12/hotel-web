@@ -18,7 +18,7 @@ function RoomsList() {
   return (
     <>
       <section>
-        <div className="h-96 w-full bg-[#042459] bg-cover bg-center bg-no-repeat text-center">
+        <div className=" h-[32rem] w-full bg-[#042459] bg-cover bg-center bg-no-repeat text-center">
           <div className="relative h-full">
             <Image
               className="absolute h-full w-full object-cover"
