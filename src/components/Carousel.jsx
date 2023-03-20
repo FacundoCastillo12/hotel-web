@@ -17,13 +17,13 @@ function Carousel({ images }) {
   };
 
   return (
-    <div className="relative m-2 mt-2 rounded-lg border-2 border-blue-200 bg-white shadow-xl shadow-blue-500 ">
+    <div className="relative m-2 mt-2 rounded-lg border-2 border-blue-200 bg-white shadow-md shadow-blue-500">
       <button
         type="button"
-        className="group absolute top-0 left-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
+        className="group absolute top-0 left-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 focus:outline-none"
         onClick={handlePrevClick}
       >
-        <span className=" inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 text-white hover:text-blue-500 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -46,7 +46,7 @@ function Carousel({ images }) {
         className="group absolute top-0 right-0 z-30 flex h-full transform cursor-pointer items-center justify-center px-4 hover:scale-110 hover:text-blue-500 focus:outline-none"
         onClick={handleNextClick}
       >
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/80 text-white hover:text-blue-500 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white sm:h-10 sm:w-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -65,7 +65,7 @@ function Carousel({ images }) {
         </span>
       </button>
 
-      <div className="h-56 w-56 overflow-hidden rounded-lg sm:h-80 sm:w-80 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:w-[32rem]">
+      <div className="h-64 w-64 overflow-hidden rounded-lg sm:h-80 sm:w-80 md:h-80 md:w-80 lg:h-96 lg:w-96 xl:w-[32rem]">
         <div>
           <Image
             src={`/${images[currentImageIndex]}`}

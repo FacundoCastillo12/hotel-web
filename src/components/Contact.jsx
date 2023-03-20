@@ -1,56 +1,11 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "@formspree/react";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 import Loading from "./Loading";
+import useValidForm from "@/hooks/useValidForm";
 
-function useValidForm() {
-  const [nameIsValid, setNameIsValid] = useState(true);
-  const [subjectIsValid, setSubjectIsValid] = useState(true);
-  const [emailIsValid, setEmailIsValid] = useState(true);
-  const [messageIsValid, setMessageIsValid] = useState(true);
-
-  const handleInputNameChange = (e) => {
-    setNameIsValid(e.target.validity.valid);
-  };
-
-  const handleInputSubjectChange = (e) => {
-    setSubjectIsValid(e.target.validity.valid);
-  };
-  const handleInputEmailChange = (e) => {
-    setEmailIsValid(e.target.validity.valid);
-  };
-
-  const validateMessage = (messageValue) => {
-    if (messageValue.length > 200) {
-      return false;
-    }
-
-    const regex = /^[a-zA-Z0-9,.!?'"()\s]+$/;
-    if (!regex.test(messageValue)) {
-      return false;
-    }
-    return true;
-  };
-
-  const handleInputMessageChange = (e) => {
-    const messageValue = e.target.value;
-    setMessageIsValid(validateMessage(messageValue));
-  };
-
-  return {
-    nameIsValid,
-    subjectIsValid,
-    emailIsValid,
-    messageIsValid,
-    handleInputNameChange,
-    handleInputSubjectChange,
-    handleInputEmailChange,
-    handleInputMessageChange,
-  };
-}
 function Contact() {
-  const { isSpanish } = useContext(LanguageContext);
+  const { content } = useContext(LanguageContext);
   const {
     nameIsValid,
     subjectIsValid,
@@ -65,12 +20,10 @@ function Contact() {
 
   return (
     <section id="contact" className="h-[100%]">
-      <div className=" h-auto w-full bg-gradient-to-t from-[#042180] to-[#031D73] text-center">
+      <div className="h-auto w-full bg-gradient-to-t from-[#042180] to-[#031D73] text-center">
         <div className="flex justify-center">
           <div className="mt-4 text-center">
-            <h2 className="text-white ">
-              {isSpanish ? "Contacta con nosotros" : "Contact us"}
-            </h2>
+            <h2 className="text-white ">{content.contact.title}</h2>
           </div>
         </div>
         <div className="flex flex-wrap">
@@ -81,17 +34,15 @@ function Contact() {
                   htmlFor="name"
                   className="block text-lg font-medium text-white"
                 >
-                  {isSpanish ? "Nombre" : "Name"}
+                  {content.contact.formName}
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  placeholder={
-                    isSpanish ? "Ingresa tu nombre" : "Enter your name"
-                  }
-                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
-                    nameIsValid ? "border-green-500" : "border-red-500"
+                  placeholder={content.contact.formNamePlaceholder}
+                  className={`w-[260px] max-w-full rounded border-2 border-solid border-purple-500 bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    nameIsValid ? "focus:border-green-500" : "border-red-500"
                   }`}
                   pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20}(?:\s[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20})?$"
                   onChange={handleInputNameChange}
@@ -102,27 +53,23 @@ function Contact() {
                 ""
               ) : (
                 <span className=" text-red-600 hover:text-red-100">
-                  {isSpanish
-                    ? "Reglas: Dos palabras con 20 caracteres máximos sin números o caracteres extraños."
-                    : "Rules: Two words with 20 characters maximum with no numbers or extraneous characters."}
+                  {content.contact.formNameRules}
                 </span>
               )}
-              <div>
+              <div className="mt-4">
                 <label
                   htmlFor="subject"
                   className="block text-lg font-medium text-white"
                 >
-                  {isSpanish ? "Asunto" : "Subject"}
+                  {content.contact.formSubject}
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder={
-                    isSpanish ? "Reservar habitación" : "Reserve a room"
-                  }
-                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
-                    subjectIsValid ? "border-green-500" : "border-red-500"
+                  placeholder={content.contact.formSubjecPlaceholder}
+                  className={`w-[260px] max-w-full rounded border-2 border-solid border-purple-500 bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    subjectIsValid ? "focus:border-green-500" : "border-red-500"
                   }`}
                   pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{3,20}(?:\s[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{1,20}){0,2}$"
                   onChange={handleInputSubjectChange}
@@ -133,17 +80,15 @@ function Contact() {
                 ""
               ) : (
                 <span className=" text-red-600 hover:text-red-200">
-                  {isSpanish
-                    ? "Reglas: Tres palabras con veinte caracteres máximo, sin números o caracteres extraños."
-                    : "Rules: Three words with twenty characters maximum, no numbers or extraneous characters."}
+                  {content.contact.formSubjectRules}
                 </span>
               )}
-              <div>
+              <div className="mt-4">
                 <label
                   htmlFor="email"
                   className="block text-lg font-medium text-white"
                 >
-                  {isSpanish ? "Correo electrónico" : "Email"}
+                  {content.contact.formEmail}
                 </label>
                 <input
                   type="email"
@@ -151,8 +96,8 @@ function Contact() {
                   name="email"
                   placeholder="email@gmail.com"
                   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
-                  className={`w-[260px] max-w-full rounded border-2 border-solid bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
-                    emailIsValid ? "border-green-500" : "border-red-500"
+                  className={`w-[260px] max-w-full rounded border-2 border-solid border-purple-500 bg-gray-50 py-1.5 transition ease-in-out focus:text-gray-700 focus:outline-none sm:w-96 sm:text-lg md:w-96 lg:w-96 ${
+                    emailIsValid ? "focus:border-green-500" : "border-red-500"
                   }`}
                   onChange={handleInputEmailChange}
                   required
@@ -162,29 +107,23 @@ function Contact() {
                 ""
               ) : (
                 <span className=" text-red-600 hover:text-red-200">
-                  {isSpanish
-                    ? "Reglas: Ingresar un mail válido."
-                    : "Rules: Enter a valid email address."}
+                  {content.contact.formEmailRules}
                 </span>
               )}
-              <div>
+              <div className="mt-4">
                 <label
                   htmlFor="textarea"
                   className="block text-lg font-medium text-white"
                 >
-                  {isSpanish ? "Mensaje" : "Message"}
+                  {content.contact.formMessage}
                 </label>
                 <textarea
                   id="textarea"
                   name="message"
                   rows="4"
-                  placeholder={
-                    isSpanish
-                      ? "Escribe tu mensaje aqui..."
-                      : "Write your message here..."
-                  }
-                  className={`w-[260px] max-w-full border-2 border-solid border-gray-300 bg-gray-50 transition ease-in-out focus:bg-white focus:text-gray-700 focus:outline-none sm:w-96 md:w-96 lg:w-96 ${
-                    messageIsValid ? "border-green-500" : "border-red-500"
+                  placeholder={content.contact.formMessagePlaceholder}
+                  className={`w-[260px] max-w-full border-2 border-solid border-purple-500 bg-gray-50 transition ease-in-out focus:bg-white focus:text-gray-700 focus:outline-none sm:w-96 md:w-96 lg:w-96 ${
+                    messageIsValid ? "focus:border-green-500" : "border-red-500"
                   }`}
                   onChange={handleInputMessageChange}
                   required
@@ -194,18 +133,16 @@ function Contact() {
                 ""
               ) : (
                 <span className=" text-red-600 hover:text-red-200">
-                  {isSpanish
-                    ? "Reglas: No se permite caracteres extraños y 200 caracteres máximo."
-                    : "Rules: No strange characters and 200 characters maximum allowed."}
+                  {content.contact.formMessageRules}
                 </span>
               )}
-              <div>
+              <div className="mt-4">
                 <button
                   type="submit"
-                  className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 hover:scale-105 hover:bg-gradient-to-br"
+                  className="mr-2 mb-2 rounded-lg bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-purple-500/50 duration-200 ease-in hover:scale-105 hover:bg-gradient-to-br"
                   disabled={state.succeeded}
                 >
-                  {isSpanish ? "Enviar" : "Send"}
+                  {content.contact.formSendButton}
                 </button>
               </div>
             </form>
@@ -213,9 +150,7 @@ function Contact() {
               {state.submitting && (
                 <div>
                   <p className="rounded bg-yellow-500 px-4 py-2 text-black">
-                    {isSpanish
-                      ? "El formulario se está enviando. Por favor espera..."
-                      : "The form is being submitted. Please wait..."}
+                    {content.contact.formSubmitting}
                   </p>
                   <Loading />
                 </div>
@@ -224,9 +159,7 @@ function Contact() {
               {state.succeeded && (
                 <div>
                   <p className="rounded bg-green-500 px-4 py-2 text-black">
-                    {isSpanish
-                      ? "El formulario ha sido enviado con éxito!"
-                      : "The form has been successfully submitted!"}
+                    {content.contact.formSucceeded}
                   </p>
                 </div>
               )}
@@ -234,9 +167,7 @@ function Contact() {
               {state.errors.length > 0 ? (
                 <div>
                   <p className="rounded bg-red-500 px-4 py-2 text-black">
-                    {isSpanish
-                      ? "Ha ocurrido un error al enviar el formulario. Por favor intenta de nuevo más tarde."
-                      : "An error occurred while submitting the form. Please try again later."}
+                    {content.contact.formError}
                   </p>
                 </div>
               ) : null}
@@ -245,7 +176,7 @@ function Contact() {
           <div className="mb-12 w-full lg:w-[60%] lg:px-6">
             <div className="mt-4 flex flex-wrap items-center justify-center">
               <div className="my-6 mx-4 lg:w-[40%] lg:px-6 xl:w-[45%]">
-                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg hover:scale-110 lg:my-8">
+                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg duration-200 ease-in hover:scale-110 lg:my-8">
                   <div className="flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -258,14 +189,16 @@ function Contact() {
                   </div>
                   <div className="mx-4">
                     <p className=" text-base text-white">
-                      {isSpanish ? "Telefono" : "Phone Number"}
+                      {content.contact.contactPhoneNumber}
                     </p>
-                    <p className="text-gray-400">+0264123456</p>
+                    <p className="text-white opacity-75 hover:opacity-100">
+                      +0264123456
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="my-6 mx-4 lg:w-[40%] lg:px-6 xl:w-[45%]">
-                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg hover:scale-110 lg:my-8">
+                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg duration-200 ease-in hover:scale-110 lg:my-8">
                   <div className="flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -278,14 +211,16 @@ function Contact() {
                   </div>
                   <div className="mx-4">
                     <p className="text-base text-white">
-                      {isSpanish ? "Correo de soporte" : "Support e-mail"}
+                      {content.contact.contactEmail}
                     </p>
-                    <p className="text-gray-400">hotel@gmail.com</p>
+                    <p className="text-white opacity-75 hover:opacity-100">
+                      hotel@gmail.com
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="my-6 mx-4 lg:w-[40%] lg:px-6 xl:w-[45%]">
-                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg hover:scale-110 lg:my-8">
+                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg duration-200 ease-in hover:scale-110 lg:my-8">
                   <div className="flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -298,14 +233,16 @@ function Contact() {
                   </div>
                   <div className="mx-4">
                     <p className=" text-base text-white">
-                      {isSpanish ? "Ubicación" : "Location"}
+                      {content.contact.contactLocation}
                     </p>
-                    <p className="text-gray-400">Av. 9 de Julio</p>
+                    <p className="text-white opacity-75 hover:opacity-100">
+                      Av. 9 de Julio
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="my-6 mx-4 lg:w-[40%] lg:px-6 xl:w-[45%]">
-                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg hover:scale-110 lg:my-8">
+                <div className="shadow-blue-gray-400 flex h-16 w-52 items-center justify-center rounded bg-purple-500 shadow-lg duration-200 ease-in hover:scale-110 lg:my-8">
                   <div className="flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -318,9 +255,9 @@ function Contact() {
                   </div>
                   <div className="mx-4">
                     <p className=" text-base text-white">
-                      {isSpanish ? "Reporte de errores" : "Bug report"}
+                      {content.contact.ContactBugReport}
                     </p>
-                    <p className="text-gray-400">
+                    <p className="text-white opacity-75 hover:opacity-100">
                       <a
                         href="https://github.com/FacundoCastillo12/hotel-web/issues"
                         target="_blank"

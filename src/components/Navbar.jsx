@@ -1,7 +1,6 @@
-/* eslint-disable import/extensions */
 import React, { useState, useEffect, useContext } from "react";
 import Link from "next/link";
-import { Link as SrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 
@@ -9,8 +8,7 @@ function Navbarmenu() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
   const [isHomePage, setIsHomePage] = useState(true);
-  const { isSpanish, setSpanishLanguage, setEnglishLanguage } =
-    useContext(LanguageContext);
+  const { content, setLang, setIsSpanish } = useContext(LanguageContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,26 +19,35 @@ function Navbarmenu() {
     }
   }, [setIsHomePage, router]);
 
+  const handleLanguageSpanish = () => {
+    setLang("es");
+    setIsSpanish(true);
+  };
+  const handleLanguageEnglish = () => {
+    setLang("en");
+    setIsSpanish(false);
+  };
+
   return (
     <header>
       <nav className="fixed inset-x-0 z-[100] flex h-20 w-full border-b border-gray-800 bg-[#01071D] px-2 py-3">
         <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
           <div className="relative flex w-full justify-between lg:static lg:block lg:w-auto lg:justify-start">
             {isHomePage ? (
-              <SrollLink
+              <ScrollLink
                 to="home"
                 smooth
                 duration={300}
                 exact="true"
                 offset={-80}
               >
-                <p className="cursor-pointer text-3xl font-bold text-white">
+                <p className="cursor-pointer text-3xl font-bold text-white hover:text-purple-500 ">
                   Miracle Hotel
                 </p>
-              </SrollLink>
+              </ScrollLink>
             ) : (
               <Link href="/">
-                <p className="cursor-pointer text-3xl font-bold text-white">
+                <p className="cursor-pointer text-3xl font-bold text-white hover:text-purple-500 ">
                   Miracle Hotel
                 </p>
               </Link>
@@ -82,87 +89,87 @@ function Navbarmenu() {
             <div className="flex list-none flex-col text-white lg:ml-auto lg:flex-row">
               {isHomePage ? (
                 <>
-                  <SrollLink
+                  <ScrollLink
                     to="home"
                     smooth
                     duration={300}
                     exact="true"
                     offset={-80}
                   >
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Inicio" : "Home"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.main}
                     </p>
-                  </SrollLink>
-                  <SrollLink
+                  </ScrollLink>
+                  <ScrollLink
                     to="rooms"
                     smooth
                     duration={300}
                     exact="true"
                     offset={-80}
                   >
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Habitaciones" : "Rooms"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.rooms}
                     </p>
-                  </SrollLink>
-                  <SrollLink
+                  </ScrollLink>
+                  <ScrollLink
                     to="services"
                     smooth
                     duration={300}
                     exact="true"
                     offset={-80}
                   >
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Servicios" : "Services"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.services}
                     </p>
-                  </SrollLink>
-                  <SrollLink
+                  </ScrollLink>
+                  <ScrollLink
                     to="about"
                     smooth
                     duration={300}
                     exact="true"
                     offset={-80}
                   >
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Acerca de Nosotros" : "About Us"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.aboutUs}
                     </p>
-                  </SrollLink>
-                  <SrollLink
+                  </ScrollLink>
+                  <ScrollLink
                     to="contact"
                     smooth
                     duration={300}
                     exact="true"
                     offset={-80}
                   >
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Contacto" : "Contact"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.contact}
                     </p>
-                  </SrollLink>
+                  </ScrollLink>
                 </>
               ) : (
                 <>
                   <Link href="/#home">
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Inicio" : "Home"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.main}
                     </p>
                   </Link>
                   <Link href="/#rooms">
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Habitaciones" : "Rooms"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.rooms}
                     </p>
                   </Link>
                   <Link href="/#services">
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Servicios" : "Services"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.services}
                     </p>
                   </Link>
                   <Link href="/#about">
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Acerca de Nosotros" : "About Us"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.aboutUs}
                     </p>
                   </Link>
                   <Link href="/#contact">
-                    <p className="ml-10 cursor-pointer text-base hover:border-b">
-                      {isSpanish ? "Contacto" : "Contact"}
+                    <p className="ml-10 cursor-pointer text-base hover:text-purple-500">
+                      {content.navBar.contact}
                     </p>
                   </Link>
                 </>
@@ -170,10 +177,10 @@ function Navbarmenu() {
               <div className="relative">
                 <button
                   type="button"
-                  className="ml-10 flex items-center justify-center text-base hover:border-b"
+                  className="ml-10 flex items-center justify-center text-base hover:text-purple-500"
                   onClick={() => setOpenLanguageMenu(!openLanguageMenu)}
                 >
-                  {isSpanish ? "Idioma" : "Language"}
+                  {content.navBar.language}
 
                   {!openLanguageMenu ? (
                     <svg
@@ -207,18 +214,18 @@ function Navbarmenu() {
                   <div className="absolute right-0 left-0 top-4 z-10 mt-1 flex w-48 flex-col justify-center rounded-b-md bg-[#01071D] shadow-lg lg:top-6">
                     <button
                       type="button"
-                      className="my-1 inline-block hover:border-b"
-                      onClick={setSpanishLanguage}
+                      className="my-1 inline-block hover:text-purple-500"
+                      onClick={handleLanguageSpanish}
                     >
-                      Español
+                      {content.navBar.spanish}
                     </button>
 
                     <button
                       type="button"
-                      className="my-1 inline-block hover:border-b"
-                      onClick={setEnglishLanguage}
+                      className="my-1 inline-block hover:text-purple-500"
+                      onClick={handleLanguageEnglish}
                     >
-                      English
+                      {content.navBar.english}
                     </button>
                   </div>
                 )}

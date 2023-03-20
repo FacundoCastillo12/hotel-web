@@ -1,30 +1,31 @@
-import React, { useState, useMemo } from "react";
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useState, useEffect } from "react";
+import english from "../lang/english";
+import spanish from "../lang/spanish";
 
 export const LanguageContext = React.createContext({
   isSpanish: false,
-  setSpanishLanguage: () => {},
-  setEnglishLanguage: () => {},
 });
 
-function LanguageContextProvider({ children }) {
+function LanguageContextProviders({ children }) {
   const [isSpanish, setIsSpanish] = useState(false);
+  const [lang, setLang] = useState("en");
+  const [content, setContent] = useState(english);
 
-  const contextValue = useMemo(() => {
-    const setSpanishLanguage = () => {
-      setIsSpanish(true);
-    };
-    const setEnglishLanguage = () => {
-      setIsSpanish(false);
-    };
-
-    return { isSpanish, setSpanishLanguage, setEnglishLanguage };
-  }, [isSpanish]);
+  useEffect(() => {
+    if (lang === "es") {
+      setContent(spanish);
+    } else if (lang === "en") {
+      setContent(english);
+    }
+  }, [lang]);
 
   return (
-    <LanguageContext.Provider value={contextValue}>
+    <LanguageContext.Provider
+      value={{ isSpanish, content, setLang, setIsSpanish }}
+    >
       {children}
     </LanguageContext.Provider>
   );
 }
-
-export default LanguageContextProvider;
+export default LanguageContextProviders;
