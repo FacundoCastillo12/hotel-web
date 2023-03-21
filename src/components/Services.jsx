@@ -11,7 +11,7 @@ function Services() {
     hotelApi.getHotelData,
     "services"
   );
-  const { isSpanish, content } = useContext(LanguageContext);
+  const { content, lang } = useContext(LanguageContext);
 
   return (
     <section id="services">
@@ -26,7 +26,7 @@ function Services() {
           {loading && <Loading />}
           {error && (
             <div className="rounded bg-red-500 px-4 py-2 text-white">
-              {isSpanish ? "Ha ocurrido un error." : "Something went wrong"}
+              {content.services.error}
             </div>
           )}
           {data && (
@@ -36,9 +36,7 @@ function Services() {
                   key={services.id}
                   className="duration-200 ease-in hover:scale-105"
                 >
-                  <h3 className="capitalize text-white">
-                    {isSpanish ? `${services.name.es}` : `${services.name.en}`}
-                  </h3>
+                  <h3 className="capitalize text-white">{services[lang]}</h3>
                   <Carousel images={services.images} />
                 </div>
               ))}

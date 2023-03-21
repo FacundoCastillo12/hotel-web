@@ -8,7 +8,7 @@ import Carousel from "@/components/Carousel";
 import Loading from "@/components/Loading";
 
 function RoomsList() {
-  const { isSpanish, content } = useContext(LanguageContext);
+  const { content, lang } = useContext(LanguageContext);
   const { data, error, loading } = useFetchGetData(
     hotelApi.getHotelData,
     "services"
@@ -66,14 +66,12 @@ function RoomsList() {
                       <div className="flex flex-col items-center justify-center text-center text-white">
                         <div className="">
                           <h2 className="mb-2 capitalize">
-                            {isSpanish ? service.name.es : service.name.en}
+                            {service.name[lang]}
                           </h2>
                         </div>
                         <div className=" mx-2">
                           <p className="text-justify">
-                            {isSpanish
-                              ? service.description.es
-                              : service.description.en}
+                            {service.description[lang]}
                           </p>
                         </div>
                         <div>

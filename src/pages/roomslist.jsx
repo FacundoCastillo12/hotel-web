@@ -9,7 +9,7 @@ import Carousel from "@/components/Carousel";
 import Loading from "@/components/Loading";
 
 function RoomsList() {
-  const { isSpanish, content } = useContext(LanguageContext);
+  const { content, lang } = useContext(LanguageContext);
   const { data, error, loading } = useFetchGetData(
     hotelApi.getHotelData,
     "rooms"
@@ -55,9 +55,7 @@ function RoomsList() {
                     className="mx-2 my-4 rounded-lg border border-purple-500 bg-[#01032B] text-white duration-200 ease-in hover:scale-105 hover:bg-blue-600"
                   >
                     <div className="my-2 h-8 border-b border-purple-500">
-                      <h3 className="text-xl capitalize">
-                        {isSpanish ? room.title.es : room.title.en}
-                      </h3>
+                      <h3 className="text-xl capitalize">{room.title[lang]}</h3>
                     </div>
                     <div className="my-1 border-b border-purple-500">
                       <div className="">
@@ -66,7 +64,7 @@ function RoomsList() {
                     </div>
                     <div className="border-b border-purple-500 sm:h-32 md:h-40 lg:h-48">
                       <p className="mx-2 my-4 text-justify">
-                        {isSpanish ? room.description.es : room.description.en}
+                        {room.description[lang]}
                       </p>
                     </div>
                     <div className="my-2 h-52">

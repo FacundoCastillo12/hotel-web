@@ -8,7 +8,7 @@ function Navbarmenu() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
   const [isHomePage, setIsHomePage] = useState(true);
-  const { content, setLang, setIsSpanish } = useContext(LanguageContext);
+  const { content, setLang } = useContext(LanguageContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,11 +21,9 @@ function Navbarmenu() {
 
   const handleLanguageSpanish = () => {
     setLang("es");
-    setIsSpanish(true);
   };
   const handleLanguageEnglish = () => {
     setLang("en");
-    setIsSpanish(false);
   };
 
   return (

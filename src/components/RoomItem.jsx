@@ -10,7 +10,7 @@ function Room({ room }) {
     description,
     price_for_day: priceForDay,
   } = room;
-  const { isSpanish, content } = useContext(LanguageContext);
+  const { content, lang } = useContext(LanguageContext);
   const priceForAWeek = priceForDay * 7;
 
   return (
@@ -26,12 +26,8 @@ function Room({ room }) {
       </div>
 
       <div className="  lg:h-52">
-        <h5 className="mb-3 text-lg font-bold capitalize">
-          {isSpanish ? `${title.es}` : `${title.en}`}
-        </h5>
-        <p className=" mx-2 text-justify">
-          {isSpanish ? `${description.es}` : `${description.en}`}
-        </p>
+        <h5 className="mb-3 text-lg font-bold capitalize">{title[lang]}</h5>
+        <p className=" mx-2 text-justify">{description[lang]}</p>
       </div>
 
       <Link

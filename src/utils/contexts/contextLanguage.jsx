@@ -8,7 +8,6 @@ export const LanguageContext = React.createContext({
 });
 
 function LanguageContextProviders({ children }) {
-  const [isSpanish, setIsSpanish] = useState(false);
   const [lang, setLang] = useState("en");
   const [content, setContent] = useState(english);
 
@@ -21,9 +20,7 @@ function LanguageContextProviders({ children }) {
   }, [lang]);
 
   return (
-    <LanguageContext.Provider
-      value={{ isSpanish, content, setLang, setIsSpanish }}
-    >
+    <LanguageContext.Provider value={{ lang, content, setLang }}>
       {children}
     </LanguageContext.Provider>
   );
