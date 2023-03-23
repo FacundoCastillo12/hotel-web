@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "../_app";
-import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider";
+import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider/next-13";
 
 describe("App", () => {
   test("renders Navbar, Component, and Footer", () => {
@@ -12,7 +12,7 @@ describe("App", () => {
         <App
           Component={() => <div data-testid="component" />}
           pageProps={pageProps}
-        />
+        />{" "}
       </MemoryRouterProvider>
     );
     const navbar = screen.getByRole("navigation");
