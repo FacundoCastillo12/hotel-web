@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import hotelApi from "@/utils/api";
-import { useFetchGetData } from "@/hooks/useSimpleFecthHook";
+import useFetchGetData from "./useSimpleFetchHook";
 
 export default function useHandleLoadRooms() {
   const { data, error, loading } = useFetchGetData(

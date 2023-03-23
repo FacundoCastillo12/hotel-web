@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     "plugin:react/recommended",
@@ -9,6 +10,7 @@ module.exports = {
     "next/core-web-vitals",
     "next",
     "prettier",
+    "plugin:jest/recommended",
   ],
   overrides: [],
   parserOptions: {

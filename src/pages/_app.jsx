@@ -10,9 +10,9 @@ function App({ Component, pageProps }) {
   return (
     <LanguageContextProvider>
       <LanguageContext.Consumer>
-        {(context) => (
+        {() => (
           <>
-            <Navbar toggleLanguage={context.toggleLanguage} />
+            <Navbar />
             <Component {...pageProps} />
             <Footer />
           </>

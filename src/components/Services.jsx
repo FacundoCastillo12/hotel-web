@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import Carousel from "./Carousel";
-import { useFetchGetData } from "@/hooks/useSimpleFecthHook";
 import hotelApi from "@/utils/api";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 import Loading from "./Loading";
+import useFetchGetData from "@/hooks/useSimpleFetchHook";
 
 function Services() {
   const { data, error, loading } = useFetchGetData(
@@ -36,7 +36,9 @@ function Services() {
                   key={services.id}
                   className="duration-200 ease-in hover:scale-105"
                 >
-                  <h3 className="capitalize text-white">{services[lang]}</h3>
+                  <h3 className="capitalize text-white">
+                    {services.name[lang]}
+                  </h3>
                   <Carousel images={services.images} />
                 </div>
               ))}

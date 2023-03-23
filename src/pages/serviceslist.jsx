@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { useFetchGetData } from "@/hooks/useSimpleFecthHook";
 import hotelApi from "@/utils/api";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 import imgMain from "../../public/assents/images/background/main.jpg";
 import Carousel from "@/components/Carousel";
 import Loading from "@/components/Loading";
+import useFetchGetData from "@/hooks/useSimpleFetchHook";
 
-function RoomsList() {
+function ServicesList() {
   const { content, lang } = useContext(LanguageContext);
   const { data, error, loading } = useFetchGetData(
     hotelApi.getHotelData,
@@ -101,4 +101,4 @@ function RoomsList() {
   );
 }
 
-export default RoomsList;
+export default ServicesList;
