@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { MemoryRouterProvider } from "next-router-mock/dist/MemoryRouterProvider";
+import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider";
 import LanguageContextProvider, {
   LanguageContext,
 } from "@/utils/contexts/contextLanguage";

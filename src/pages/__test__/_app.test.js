@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "../_app";
-import { MemoryRouterProvider } from "next-router-mock/dist/MemoryRouterProvider";
+import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider";
 
 describe("App", () => {
   test("renders Navbar, Component, and Footer", () => {
