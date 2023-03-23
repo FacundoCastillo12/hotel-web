@@ -7,7 +7,7 @@ function Footer() {
         <div className="mb-9 flex flex-wrap justify-center">
           <a
             href="#!"
-            className="mx-6 text-white hover:scale-150"
+            className="mx-6 text-white duration-200 ease-in hover:scale-150"
             title="Link to facebook"
           >
             <svg
@@ -21,7 +21,7 @@ function Footer() {
           </a>
           <a
             href="#!"
-            className="mx-6 text-white hover:scale-150"
+            className="mx-6 text-white duration-200 ease-in hover:scale-150"
             title="Link to twitter"
           >
             <svg
@@ -35,7 +35,7 @@ function Footer() {
           </a>
           <a
             href="#!"
-            className="mx-6 text-white hover:scale-150"
+            className="mx-6 text-white duration-200 ease-in hover:scale-150"
             title="Link to instagram"
           >
             <svg
@@ -50,7 +50,7 @@ function Footer() {
           <a
             href="https://www.linkedin.com/in/facundocastillo12/"
             target="_blank"
-            className="mx-6 text-white hover:scale-150"
+            className="mx-6 text-white duration-200 ease-in hover:scale-150"
             title="Link to linkedin"
           >
             <svg
@@ -65,7 +65,7 @@ function Footer() {
           <a
             href="https://github.com/FacundoCastillo12"
             target="_blank"
-            className="mx-6 text-white hover:scale-150"
+            className="mx-6 text-white duration-200 ease-in hover:scale-150"
             title="Link to github"
           >
             <svg

@@ -4,6 +4,8 @@ This hotel website was created with the aim of applying and improving my web dev
 
 To develop this website, technologies such as React and NextJS were used, and the Tailwind style library was applied to ensure maximum adaptability and responsiveness on different devices and screens. This project has been a great opportunity to learn and apply knowledge in web application development. Explore the website and make yourself at home!
 
+**This project has been thoroughly tested to ensure its functionality**
+
 ## Features
 
 1. Functional form with validations: The form includes validations to ensure that the fields are completed correctly before sending information to formspree.io. This ensures that the information received by the hotel is accurate and useful for the user.

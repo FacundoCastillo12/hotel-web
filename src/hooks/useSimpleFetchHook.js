@@ -32,27 +32,7 @@ const fetchReducer = (state, action) => {
   }
 };
 
-export const useFetchTimeoutGetData = (fetchResource, param, timeout) => {
-  const [state, dispatch] = useReducer(fetchReducer, initialState);
-  useEffect(() => {
-    const timeoutId = setTimeout(async () => {
-      dispatch({ type: "LOAD" });
-      try {
-        const resource = await fetchResource(param);
-        dispatch({ type: "SUCCESS", payload: resource });
-      } catch (error) {
-        dispatch({ type: "FAILURE", payload: error });
-      }
-    }, timeout);
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [fetchResource, param, timeout]);
-
-  return state;
-};
-
-export function useFetchGetData(fetchResource, param) {
+export default function useFetchGetData(fetchResource, param) {
   const [state, dispatch] = useReducer(fetchReducer, initialState);
   useEffect(() => {
     const fetch = async () => {
