@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import Home from "..";
+import Home from "../../../src/pages";
 import LanguageContextProvider, {
   LanguageContext,
 } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
 import { act } from "react-dom/test-utils";
 
-jest.mock("../../hooks/useSimpleFetchHook", () => ({
+jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
   __esModule: true,
   default: jest.fn().mockReturnValue({
     data: {

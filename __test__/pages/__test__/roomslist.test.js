@@ -3,9 +3,9 @@ import LanguageContextProvider, {
   LanguageContext,
 } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
-import RoomsList from "../roomslist";
+import RoomsList from "../../../src/pages/roomslist";
 
-jest.mock("../../hooks/useSimpleFetchHook", () => ({
+jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
   __esModule: true,
   default: jest.fn().mockReturnValue({
     data: {

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import App from "../_app";
+import App from "../../../src/pages/_app";
 import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider/next-13";
 
 describe("App", () => {

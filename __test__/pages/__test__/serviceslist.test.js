@@ -3,10 +3,9 @@ import LanguageContextProvider, {
   LanguageContext,
 } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
+import ServicesList from "../../../src/pages/serviceslist";
 
-import ServicesList from "../serviceslist";
-
-jest.mock("../../hooks/useSimpleFetchHook", () => ({
+jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
   __esModule: true,
   default: jest.fn().mockReturnValue({
     data: {

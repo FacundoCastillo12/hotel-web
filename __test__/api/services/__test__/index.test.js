@@ -1,6 +1,6 @@
 import path from "path";
-import handler from "../index";
 import { promises as fs } from "fs";
+import handler from "@/pages/api/services";
 
 describe("handler", () => {
   it("should return the contents of the data file in JSON format", async () => {
