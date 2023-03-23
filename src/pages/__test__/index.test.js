@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Home from "..";
-import { MemoryRouterProvider } from "next-router-mock/MemoryRouterProvider";
 import LanguageContextProvider, {
   LanguageContext,
 } from "@/utils/contexts/contextLanguage";
