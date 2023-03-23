@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "prettier": "prettier --write",
     "prepare": "husky install",
     "test": "jest --watch",
-    "jest": "jest --coverage"
+    "jest": "jest --coverage",
+    "pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {
