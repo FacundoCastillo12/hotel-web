@@ -33,3 +33,8 @@ To install and run this project locally, follow these steps:
 The website will be available at http://localhost:3000 in your web browser.
 
 That's it! You should now be able to see and interact with the website on your own machine.
+
+## Screenshots
+
+![web-hotel](https://user-images.githubusercontent.com/121767553/227786308-e58fef3d-af48-467f-aa66-bf6f238b50e7.png)
+
