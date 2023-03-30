@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "@/utils/contexts/contextLanguage";
+import LanguageContextProvider, { LanguageContext } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
 import ServicesList from "../../../src/pages/serviceslist";
 
@@ -17,9 +15,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
             en: "Bar",
           },
           images: [
-            "assents/images/bar/crew.jpg",
-            "assents/images/bar/patricktomasso.jpg",
-            "assents/images/bar/taylordavidsonbar.jpg",
+            "assets/images/bar/crew.webp",
+            "assets/images/bar/patricktomasso.webp",
+            "assets/images/bar/taylordavidsonbar.webp",
           ],
           description: {
             es: "Servicio 1",
@@ -39,9 +37,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
             en: "Services 2",
           },
           images: [
-            "assents/images/gym/daniellecerullo.jpg",
-            "assents/images/gym/humphreymuleba.jpg",
-            "assents/images/gym/markbertulfo.jpg",
+            "assets/images/gym/daniellecerullo.webp",
+            "assets/images/gym/humphreymuleba.webp",
+            "assets/images/gym/markbertulfo.webp",
           ],
           opening_hours: "08:00",
           closing_hours: "00:00",
@@ -57,9 +55,7 @@ describe("Servicelist", () => {
   it("should render services and rooms data", () => {
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <ServicesList />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <ServicesList />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
     expect(screen.getByText("Our services")).toBeInTheDocument();

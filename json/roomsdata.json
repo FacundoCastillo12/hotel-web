@@ -6,11 +6,11 @@
         "es": "Vista al mar",
         "en": "Sea view"
       },
-      "room_image": "assents/images/rooms/roomone/roomone.jpg",
+      "room_image": "assets/images/rooms/roomone/roomone.webp",
       "images": [
-        "assents/images/rooms/roomone/francescasaraco.jpg",
-        "assents/images/rooms/roomone/humphreymuleba.jpg",
-        "assents/images/rooms/roomone/roomone.jpg"
+        "assets/images/rooms/roomone/francescasaraco.webp",
+        "assets/images/rooms/roomone/humphreymuleba.webp",
+        "assets/images/rooms/roomone/roomone.webp"
       ],
       "description": {
         "es": "Esta habitación cuenta con una vista impresionante del océano. La habitación tiene una cama king size, televisión de pantalla plana, minibar, baño privado con ducha, aire acondicionado y balcón privado.",
@@ -31,11 +31,11 @@
         "es": "Bungalow en la playa",
         "en": "Beach Bungalow"
       },
-      "room_image": "assents/images/rooms/roomtwo/roomtwo.jpg",
+      "room_image": "assets/images/rooms/roomtwo/roomtwo.webp",
       "images": [
-        "assents/images/rooms/roomtwo/sashakaunasone.jpg",
-        "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
-        "assents/images/rooms/roomtwo/sashakaunasthree.jpg"
+        "assets/images/rooms/roomtwo/sashakaunasone.webp",
+        "assets/images/rooms/roomtwo/sashakaunastwo.webp",
+        "assets/images/rooms/roomtwo/sashakaunasthree.webp"
       ],
       "description": {
         "es": "Esta habitación es una cabaña de madera que se encuentra directamente en la playa. La habitación cuenta con una cama king size, aire acondicionado, minibar, baño privado con ducha, y sillas para relajarse mientras escucha las olas del mar.",
@@ -56,11 +56,11 @@
         "es": "Suite de lujo",
         "en": "Luxury Suite"
       },
-      "room_image": "assents/images/rooms/roomthree/roomthree.jpg",
+      "room_image": "assets/images/rooms/roomthree/roomthree.webp",
       "images": [
-        "assents/images/rooms/roomthree/stevenungermannone.jpg",
-        "assents/images/rooms/roomthree/stevenungermanntwo.jpg",
-        "assents/images/rooms/roomthree/stevenungermannthree.jpg"
+        "assets/images/rooms/roomthree/stevenungermannone.webp",
+        "assets/images/rooms/roomthree/stevenungermanntwo.webp",
+        "assets/images/rooms/roomthree/stevenungermannthree.webp"
       ],
       "description": {
         "es": "La habitación de lujo incluye jacuzzi privado en la terraza, cama king size, aire acondicionado, minibar, baño con ducha y sala de estar con TV de pantalla plana. Además, cuenta con hamacas y sillas para relajarse en la terraza.",
@@ -81,11 +81,11 @@
         "es": "Habitación Jardín",
         "en": "Garden Room"
       },
-      "room_image": "assents/images/rooms/roomfour/visualsofdanaroombase.jpg",
+      "room_image": "assets/images/rooms/roomfour/visualsofdanaroombase.webp",
       "images": [
-        "assents/images/rooms/roomfour/visualsofdanaroomone.jpg",
-        "assents/images/rooms/roomfour/visualsofdanaroomtwo.jpg",
-        "assents/images/rooms/roomfour/visualsofdanaroomthree.jpg"
+        "assets/images/rooms/roomfour/visualsofdanaroomone.webp",
+        "assets/images/rooms/roomfour/visualsofdanaroomtwo.webp",
+        "assets/images/rooms/roomfour/visualsofdanaroomthree.webp"
       ],
       "description": {
         "es": "Disfruta de la tranquilidad de nuestra Habitación Jardín. Descansa en una cama king-size rodeado de vegetación y flores tropicales. Refréscate con el aire acondicionado y relájate viendo tu programa favorito en la televisión.",
@@ -106,11 +106,11 @@
         "es": "Frente al Mar",
         "en": "Oceanfront Room"
       },
-      "room_image": "assents/images/rooms/roomfive/chastitycortijoone.jpg",
+      "room_image": "assets/images/rooms/roomfive/chastitycortijoone.webp",
       "images": [
-        "assents/images/rooms/roomfive/chastitycortijoone.jpg",
-        "assents/images/rooms/roomfive/rarchitecturetwo.jpg",
-        "assents/images/rooms/roomfive/vitalysacredthree.jpg"
+        "assets/images/rooms/roomfive/chastitycortijoone.webp",
+        "assets/images/rooms/roomfive/rarchitecturetwo.webp",
+        "assets/images/rooms/roomfive/vitalysacredthree.webp"
       ],
       "description": {
         "es": "Disfruta de la vista panorámica del océano en una habitación de lujo frente al mar. Descansa en una cama king size rodeado de comodidades como aire acondicionado y jacuzzi. Relájate en la sala de estar privada o en la terraza privada.",
@@ -131,11 +131,11 @@
         "es": "Habitación Costa del Sol",
         "en": "Costa del Sol Room"
       },
-      "room_image": "assents/images/rooms/roomsix/huynguyenone.jpg",
+      "room_image": "assets/images/rooms/roomsix/huynguyenone.webp",
       "images": [
-        "assents/images/rooms/roomsix/huynguyenone.jpg",
-        "assents/images/rooms/roomsix/aaronhubertwo.jpg",
-        "assents/images/rooms/roomsix/drewcoffmanthree.jpg"
+        "assets/images/rooms/roomsix/huynguyenone.webp",
+        "assets/images/rooms/roomsix/aaronhubertwo.webp",
+        "assets/images/rooms/roomsix/drewcoffmanthree.webp"
       ],
       "description": {
         "es": "Esta habitación con vista al mar está diseñada para aquellos que buscan relajarse y disfrutar de la tranquilidad de la playa. Decorada con tonos cálidos y acentos de madera, cuenta con todo lo necesario para una estadía cómoda y acogedora.",

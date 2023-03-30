@@ -2,17 +2,14 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import hotelApi from "@/utils/api";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
-import imgMain from "../../public/assents/images/background/main.jpg";
+import imgMain from "../../public/assets/images/background/main.webp";
 import Carousel from "@/components/Carousel";
 import Loading from "@/components/Loading";
 import useFetchGetData from "@/hooks/useSimpleFetchHook";
 
 function ServicesList() {
   const { content, lang } = useContext(LanguageContext);
-  const { data, error, loading } = useFetchGetData(
-    hotelApi.getHotelData,
-    "services"
-  );
+  const { data, error, loading } = useFetchGetData(hotelApi.getHotelData, "services");
 
   return (
     <>
@@ -31,9 +28,7 @@ function ServicesList() {
                 <h2 className="mb-4 font-mono text-4xl font-bold italic text-white ">
                   {content.servicesList.title}
                 </h2>
-                <p className=" text-xl text-white">
-                  {content.servicesList.desc}
-                </p>
+                <p className=" text-xl text-white">{content.servicesList.desc}</p>
               </div>
             </div>
           </div>
@@ -51,10 +46,7 @@ function ServicesList() {
             {data && (
               <div>
                 {data.services.map((service) => (
-                  <div
-                    key={service.id}
-                    className={`w-full ${service.id % 2 === 0 ? "" : ""}`}
-                  >
+                  <div key={service.id} className={`w-full ${service.id % 2 === 0 ? "" : ""}`}>
                     <div
                       className={`flex flex-row flex-wrap items-center justify-center sm:flex-nowrap ${
                         service.id % 2 === 0 ? "" : "flex-row-reverse"
@@ -65,14 +57,10 @@ function ServicesList() {
                       </div>
                       <div className="flex flex-col items-center justify-center text-center text-white">
                         <div className="">
-                          <h2 className="mb-2 capitalize">
-                            {service.name[lang]}
-                          </h2>
+                          <h2 className="mb-2 capitalize">{service.name[lang]}</h2>
                         </div>
                         <div className=" mx-2">
-                          <p className="text-justify">
-                            {service.description[lang]}
-                          </p>
+                          <p className="text-justify">{service.description[lang]}</p>
                         </div>
                         <div>
                           <div className="my-2">

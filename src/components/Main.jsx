@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import imgMain from "../../public/assents/images/background/main.jpg";
+import imgMain from "../../public/assets/images/background/main.webp";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 
 function Main() {
@@ -16,7 +16,7 @@ function Main() {
             priority
           />
           <div className="absolute inset-0 bg-gray-900 bg-opacity-40" />
-          <div className=" absolute inset-0 mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
+          <div className=" absolute inset-0 mx-auto flex h-full w-full max-w-[1240px]  items-center justify-center p-2">
             <div>
               <h2 className="mb-4 font-mono text-4xl font-bold italic text-white">
                 {content.main.welcome}

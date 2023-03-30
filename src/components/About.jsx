@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useContext } from "react";
-import barThree from "../../public/assents/images/sashakaunashotel.jpg";
+import barThree from "../../public/assets/images/sashakaunashotel.webp";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
 
 function About() {
@@ -13,19 +13,13 @@ function About() {
             <h2 className="mb-4 mt-10 text-center text-2xl font-bold uppercase italic text-white">
               {content.about.title}
             </h2>
-            <h3 className="my-2 text-lg text-white">
-              {content.about.subTitle}
-            </h3>
+            <h3 className="my-2 text-lg text-white">{content.about.subTitle}</h3>
             <p className="text-white">{content.about.firstParagraph}</p>
             <p className="my-2 text-white">{content.about.secondParagraph}</p>
             <p className="text-white">{content.about.thirdParagraph}</p>
           </div>
           <div className="col-span-2 mx-4 mt-4 flex h-auto w-auto items-center justify-center rounded-lg bg-purple-900 p-4 shadow-xl shadow-blue-500 duration-300 ease-in hover:scale-105 md:col-span-1 2xl:h-[24rem] 2xl:w-[26rem]">
-            <Image
-              src={barThree}
-              alt="Image hotel"
-              className="h-full w-full object-cover"
-            />
+            <Image src={barThree} alt="Image hotel" className="h-full w-full object-cover" />
           </div>
         </div>
       </div>

@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "@/utils/contexts/contextLanguage";
+import LanguageContextProvider, { LanguageContext } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
 import RoomsList from "../../../src/pages/roomslist";
 
@@ -18,9 +16,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
           },
           room_image: "Image1",
           images: [
-            "assents/images/rooms/roomone/francescasaraco.jpg",
-            "assents/images/rooms/roomone/humphreymuleba.jpg",
-            "assents/images/rooms/roomone/roomone.jpg",
+            "assets/images/rooms/roomone/francescasaraco.webp",
+            "assets/images/rooms/roomone/humphreymuleba.webp",
+            "assets/images/rooms/roomone/roomone.webp",
           ],
           description: {
             es: "Habitacion prueba en español",
@@ -43,9 +41,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
           },
           room_image: "Image2",
           images: [
-            "assents/images/rooms/roomtwo/sashakaunasone.jpg",
-            "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
-            "assents/images/rooms/roomtwo/sashakaunasthree.jpg",
+            "assets/images/rooms/roomtwo/sashakaunasone.webp",
+            "assets/images/rooms/roomtwo/sashakaunastwo.webp",
+            "assets/images/rooms/roomtwo/sashakaunasthree.webp",
           ],
           description: {
             es: "Habitacion celestial",
@@ -71,14 +69,10 @@ describe("Roomslist", () => {
   it("should render room and rooms data", () => {
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <RoomsList />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <RoomsList />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-      "Our rooms"
-    );
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Our rooms");
     expect(screen.getByText("Sea view")).toBeInTheDocument();
     expect(screen.getByRole("status")).toBeInTheDocument();
   });
