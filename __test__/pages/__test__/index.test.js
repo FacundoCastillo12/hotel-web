@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Home from "../../../src/pages";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "@/utils/contexts/contextLanguage";
+import LanguageContextProvider, { LanguageContext } from "@/utils/contexts/contextLanguage";
 import "@testing-library/jest-dom";
 import { act } from "react-dom/test-utils";
 
@@ -46,9 +44,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
             en: "Bar",
           },
           images: [
-            "assents/images/bar/crew.jpg",
-            "assents/images/bar/patricktomasso.jpg",
-            "assents/images/bar/taylordavidsonbar.jpg",
+            "assets/images/bar/crew.webp",
+            "assets/images/bar/patricktomasso.webp",
+            "assets/images/bar/taylordavidsonbar.webp",
           ],
         },
         {
@@ -58,9 +56,9 @@ jest.mock("../../../src/hooks/useSimpleFetchHook", () => ({
             en: "Gym",
           },
           images: [
-            "assents/images/gym/daniellecerullo.jpg",
-            "assents/images/gym/humphreymuleba.jpg",
-            "assents/images/gym/markbertulfo.jpg",
+            "assets/images/gym/daniellecerullo.webp",
+            "assets/images/gym/humphreymuleba.webp",
+            "assets/images/gym/markbertulfo.webp",
           ],
         },
       ],
@@ -80,9 +78,7 @@ describe("Home", () => {
       );
     });
 
-    expect(
-      screen.getByRole("heading", { name: /miracle hotel/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /miracle hotel/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /rooms/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /services/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /about/i })).toBeInTheDocument();

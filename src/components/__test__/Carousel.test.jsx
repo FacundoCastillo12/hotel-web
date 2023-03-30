@@ -1,22 +1,18 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "@/utils/contexts/contextLanguage";
+import LanguageContextProvider, { LanguageContext } from "@/utils/contexts/contextLanguage";
 import Carousel from "../Carousel";
 
 describe("Carousel", () => {
   it("render carousel with language context", () => {
     const images = [
-      "assents/images/rooms/roomtwo/sashakaunasone.jpg",
-      "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
-      "assents/images/rooms/roomtwo/sashakaunasthree.jpg",
+      "assets/images/rooms/roomtwo/sashakaunasone.webp",
+      "assets/images/rooms/roomtwo/sashakaunastwo.webp",
+      "assets/images/rooms/roomtwo/sashakaunasthree.webp",
     ];
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Carousel images={images} />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Carousel images={images} />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
     const imageTest = screen.getByAltText("Image 0");
@@ -24,15 +20,13 @@ describe("Carousel", () => {
   });
   it("render carousel and click button next", () => {
     const images = [
-      "assents/images/rooms/roomtwo/sashakaunasone.jpg",
-      "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
-      "assents/images/rooms/roomtwo/sashakaunasthree.jpg",
+      "assets/images/rooms/roomtwo/sashakaunasone.webp",
+      "assets/images/rooms/roomtwo/sashakaunastwo.webp",
+      "assets/images/rooms/roomtwo/sashakaunasthree.webp",
     ];
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Carousel images={images} />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Carousel images={images} />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
     const imageTest = screen.getByAltText("Image 0");
@@ -47,15 +41,13 @@ describe("Carousel", () => {
   });
   it("render carousel and click button previous", () => {
     const images = [
-      "assents/images/rooms/roomtwo/sashakaunasone.jpg",
-      "assents/images/rooms/roomtwo/sashakaunastwo.jpg",
-      "assents/images/rooms/roomtwo/sashakaunasthree.jpg",
+      "assets/images/rooms/roomtwo/sashakaunasone.webp",
+      "assets/images/rooms/roomtwo/sashakaunastwo.webp",
+      "assets/images/rooms/roomtwo/sashakaunasthree.webp",
     ];
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Carousel images={images} />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Carousel images={images} />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
     const imageTest = screen.getByAltText("Image 0");

@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import LanguageContextProvider, {
-  LanguageContext,
-} from "@/utils/contexts/contextLanguage";
+import LanguageContextProvider, { LanguageContext } from "@/utils/contexts/contextLanguage";
 import Services from "../Services";
 
 jest.mock("../../hooks/useSimpleFetchHook", () => ({
@@ -17,9 +15,9 @@ jest.mock("../../hooks/useSimpleFetchHook", () => ({
             en: "Bar",
           },
           images: [
-            "assents/images/bar/crew.jpg",
-            "assents/images/bar/patricktomasso.jpg",
-            "assents/images/bar/taylordavidsonbar.jpg",
+            "assets/images/bar/crew.webp",
+            "assets/images/bar/patricktomasso.webp",
+            "assets/images/bar/taylordavidsonbar.webp",
           ],
         },
         {
@@ -29,9 +27,9 @@ jest.mock("../../hooks/useSimpleFetchHook", () => ({
             en: "Gym",
           },
           images: [
-            "assents/images/gym/daniellecerullo.jpg",
-            "assents/images/gym/humphreymuleba.jpg",
-            "assents/images/gym/markbertulfo.jpg",
+            "assets/images/gym/daniellecerullo.webp",
+            "assets/images/gym/humphreymuleba.webp",
+            "assets/images/gym/markbertulfo.webp",
           ],
         },
       ],
@@ -45,14 +43,10 @@ describe("Rooms", () => {
   it("render rooms with language context", () => {
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Services />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Services />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
-    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-      "Our services"
-    );
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent("Our services");
     const moreServices = screen.getByText("Learn more about our services");
     expect(moreServices).toHaveAttribute("href", "/serviceslist");
   });
@@ -60,9 +54,7 @@ describe("Rooms", () => {
   it("renders the services data when data fetch is successful", async () => {
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Services />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Services />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
     expect(screen.getByText("Bar")).toBeInTheDocument();
@@ -72,9 +64,7 @@ describe("Rooms", () => {
   it("renders loading", () => {
     render(
       <LanguageContextProvider>
-        <LanguageContext.Consumer>
-          {() => <Services />}
-        </LanguageContext.Consumer>
+        <LanguageContext.Consumer>{() => <Services />}</LanguageContext.Consumer>
       </LanguageContextProvider>
     );
 

@@ -3,17 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import hotelApi from "@/utils/api";
 import { LanguageContext } from "@/utils/contexts/contextLanguage";
-import imgMain from "../../public/assents/images/background/main.jpg";
+import imgMain from "../../public/assets/images/background/main.webp";
 import Carousel from "@/components/Carousel";
 import Loading from "@/components/Loading";
 import useFetchGetData from "@/hooks/useSimpleFetchHook";
 
 function RoomsList() {
   const { content, lang } = useContext(LanguageContext);
-  const { data, error, loading } = useFetchGetData(
-    hotelApi.getHotelData,
-    "rooms"
-  );
+  const { data, error, loading } = useFetchGetData(hotelApi.getHotelData, "rooms");
 
   return (
     <>
@@ -63,15 +60,11 @@ function RoomsList() {
                       </div>
                     </div>
                     <div className="border-b border-purple-500 sm:h-32 md:h-40 lg:h-48">
-                      <p className="mx-2 my-4 text-justify">
-                        {room.description[lang]}
-                      </p>
+                      <p className="mx-2 my-4 text-justify">{room.description[lang]}</p>
                     </div>
                     <div className="my-2 h-52">
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.priceForDay}:
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.priceForDay}:</p>
                         <strong className="mx-2">{room.price_for_day}$</strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
@@ -86,48 +79,35 @@ function RoomsList() {
                         </strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.airConditioning}
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.airConditioning}</p>
                         <strong className="mx-2 capitalize">
-                          {(room.air_conditioning &&
-                            content.roomsList.rooms.isYes) ||
+                          {(room.air_conditioning && content.roomsList.rooms.isYes) ||
                             content.roomsList.rooms.isNo}
                         </strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.privateBathroom}
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.privateBathroom}</p>
                         <strong className="mx-2 capitalize">
-                          {(room.private_bathroom &&
-                            content.roomsList.rooms.isYes) ||
+                          {(room.private_bathroom && content.roomsList.rooms.isYes) ||
                             content.roomsList.rooms.isNo}
                         </strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.television}
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.television}</p>
                         <strong className="mx-2 capitalize">
                           {(room.television && content.roomsList.rooms.isYes) ||
                             content.roomsList.rooms.isNo}
                         </strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.livingRoom}
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.livingRoom}</p>
                         <strong className="mx-2 capitalize">
-                          {(room.living_room &&
-                            content.roomsList.rooms.isYes) ||
+                          {(room.living_room && content.roomsList.rooms.isYes) ||
                             content.roomsList.rooms.isNo}
                         </strong>
                       </div>
                       <div className="flex justify-between border-purple-500">
-                        <p className="mx-2">
-                          {content.roomsList.rooms.minibar}
-                        </p>
+                        <p className="mx-2">{content.roomsList.rooms.minibar}</p>
                         <strong className="mx-2 capitalize">
                           {(room.mini_bar && content.roomsList.rooms.isYes) ||
                             content.roomsList.rooms.isNo}
