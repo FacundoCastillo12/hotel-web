@@ -20,6 +20,8 @@ To develop this website, technologies such as React and NextJS were used, and th
 
 6. Complete information about the services: The page features a dedicated section for displaying the hotel's services. This allows the user to better understand what the hotel has to offer and make an informed decision about their reservation.
 
+7.Optimized and compressed images: Images have been processed to reduce their size without compromising their quality, resulting in faster loading times for the website. Additionally, they have been converted to the WebP format, which offers better compression than traditional image formats.
+
 ## Installation
 
 To install and run this project locally, follow these steps:
